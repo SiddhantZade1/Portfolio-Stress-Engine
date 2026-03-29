@@ -1,103 +1,145 @@
-Portfolio Stress Testing
+# Portfolio Stress Testing
 
-Overview
+## Overview
 
-This project builds a portfolio stress testing framework using Python and historical market data. The goal is to evaluate how different portfolio strategies perform during market crises, under simulated shock scenarios, and through a basic machine learning approach to stress detection.
+This project builds a portfolio stress testing framework using Python, historical market data, and a basic machine learning stress detection layer.
 
-The focus of this project is not only on return, but on understanding portfolio resilience, drawdowns, and behavior during difficult market conditions.
+Instead of focusing only on return, the project evaluates how different portfolio strategies behave during crisis periods, inflation shocks, recessionary environments, and equity drawdowns.
 
-Objective
+## What this project highlights
 
-The objective of this project is to compare how different portfolio constructions respond to stress environments. It also explores whether simple machine learning features can help identify periods of market stress in advance.
+This project highlights four key ideas:
 
-Portfolios Included
+- Multi-portfolio construction across different market views
+- Historical crisis testing using the Global Financial Crisis and COVID crash
+- Scenario analysis under shock environments
+- Machine learning based stress regime detection using return and rolling volatility
 
-The project compares multiple portfolio styles representing different investment approaches:
+## Portfolios included
 
-Conservative
-Balanced
-Aggressive
-Inflation Hedge
-Recession Defense
-All Weather
-Concentrated Equity
-Custom 100K Portfolio
+The notebook compares the following portfolio styles:
 
-Assets Used
+- Conservative
+- Balanced
+- Aggressive
+- Inflation Hedge
+- Recession Defense
+- All Weather
+- Concentrated Equity
+- Custom 100K Portfolio
 
-The portfolio framework uses exchange traded funds representing different asset classes:
+## Assets used
 
-SPY for broad US equities
-QQQ for growth oriented equities
-TLT for long duration US Treasury bonds
-IEF for intermediate duration US Treasury bonds
-GLD for gold
-USO for oil exposure
-HYG for high yield credit
-DBC for commodities
-SHY for short term Treasury exposure
+The framework uses ETFs representing major asset classes:
 
-What the Project Does
+- SPY for broad US equities
+- QQQ for growth equities
+- TLT for long duration US Treasury bonds
+- IEF for intermediate duration US Treasury bonds
+- GLD for gold
+- USO for oil exposure
+- HYG for high yield credit
+- DBC for commodities
+- SHY for short term Treasury exposure
 
-Downloads historical adjusted price data starting from 2007
+## Project workflow
 
-Constructs multiple portfolios using different asset allocations
+The notebook follows this process:
 
-Calculates daily returns and cumulative growth of portfolios
+1. Download historical market data from 2007 onward
+2. Build portfolio returns for multiple allocation styles
+3. Compare cumulative portfolio growth
+4. Calculate risk and performance metrics
+5. Test behavior during historical crisis periods
+6. Run shock based scenario analysis
+7. Apply a machine learning classification model to identify stress regimes
 
-Evaluates key performance metrics including annualized return, annualized volatility, Sharpe ratio, and maximum drawdown
+## Key metrics evaluated
 
-Analyzes portfolio performance during major crisis periods
+The project evaluates each portfolio using:
 
-Simulates hypothetical stress scenarios such as equity crashes and inflation shocks
+- Annualized return
+- Annualized volatility
+- Sharpe ratio
+- Maximum drawdown
 
-Builds a machine learning based stress detection model using return and rolling volatility
+## Historical stress periods used
 
-Historical Stress Periods
+- Global Financial Crisis from October 2007 to March 2009
+- COVID Crash from February 2020 to April 2020
 
-Global Financial Crisis from October 2007 to March 2009
+## Machine learning approach
 
-COVID Crash from February 2020 to April 2020
+The machine learning section uses a classification framework to identify stress regimes.
 
-Machine Learning Approach
+Stress is defined using the worst 10 percent of forward 20 day returns, which makes the target data driven rather than based on an arbitrary threshold.
 
-The project uses a simple classification model to detect stress regimes. Stress is defined based on the worst 10 percent of forward 20 day returns, allowing for a data driven identification of extreme downside periods.
+The model uses:
 
-The model uses features such as daily returns and rolling volatility to classify whether the market is entering a stress regime.
+- Daily returns
+- Rolling volatility
 
-Key Insights
+This section is intended as a prototype that shows how machine learning can be layered onto a portfolio risk framework.
 
-Portfolio performance varies significantly across market regimes
+## Sample output
 
-Diversification improves stability but does not eliminate drawdowns during crises
+### Portfolio growth comparison
 
-Portfolios designed for inflation or recession behave differently under stress
+Add a screenshot here of your cumulative portfolio growth chart.
 
-Scenario testing provides additional insight beyond historical analysis
+![Portfolio Growth](images/portfolio_growth.png)
 
-Machine learning can be used as an initial step toward identifying forward looking stress signals
+### Risk metric comparison
 
-Tools and Libraries
+Add a screenshot here of your summary ranking table or metric comparison output.
 
-Python
-Pandas
-NumPy
-Matplotlib
-yfinance
-scikit learn
+![Risk Metrics](images/risk_metrics.png)
 
-File in Repository
+### Crisis period analysis
 
-ml_portfolio_stress_testing.ipynb
+Add a screenshot here of your crisis performance table or chart.
 
-How to Use
+![Crisis Analysis](images/crisis_analysis.png)
 
-Open the notebook in Jupyter Notebook or Google Colab
+### Machine learning stress detection
 
-Run all cells in order
+Add a screenshot here of the ML output, class distribution, threshold logic, or stress classification results.
 
-Review portfolio performance, risk metrics, crisis analysis, scenario testing, and machine learning outputs
+![ML Stress Detection](images/ml_stress_detection.png)
 
-Project Positioning
+## Key takeaways
 
-This project demonstrates practical skills in portfolio construction, risk analysis, stress testing, and the application of machine learning in financial analysis. It is designed to reflect how portfolios behave under real world conditions rather than only in average market environments.
+- Portfolio behavior changes significantly across market regimes
+- Diversification improves stability, but crisis drawdowns still differ sharply by allocation
+- Defensive and inflation focused portfolios respond differently under stress
+- Historical stress testing reveals weaknesses that average return analysis can miss
+- Machine learning can be used as an early step toward identifying downside risk conditions
+
+## Tools and libraries
+
+- Python
+- pandas
+- numpy
+- matplotlib
+- yfinance
+- scikit-learn
+
+## Repository file
+
+- ml_portfolio_stress_testing.ipynb
+
+## How to use
+
+1. Open the notebook in Jupyter Notebook or Google Colab
+2. Run all cells in order
+3. Review the portfolio comparison, crisis analysis, scenario testing, and ML stress detection outputs
+
+## Project positioning
+
+This project demonstrates practical skills in:
+
+- Portfolio construction
+- Risk analysis
+- Stress testing
+- Scenario modeling
+- Applied machine learning in finance
